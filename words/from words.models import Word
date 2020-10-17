@@ -1,0 +1,14 @@
+from words.models import Word
+Word.objects.all()
+import json
+with open('barrons_words.json') as f:
+  data = json.load(f)
+
+w_list = []
+for item in data:
+   w_list.append(Word(word=item['word'], meaning=item['meaning']))
+
+Word.objects.filter.bulk_create(w_list, batch_size=1000)
+
+
+

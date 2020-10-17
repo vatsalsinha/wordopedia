@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<script>
+    function next(){
+        var w = "{{wrd_dtl.id}}";
+        w = parseInt(w)
+        w = w+1;
+        console.log(w)
+        if (w < 9519){
+        window.location.href = `http://localhost:8000/word/${w}/`;
+        }
+        
+    }
+    function prev(){
+        var w = "{{wrd_dtl.id}}";
+        w = parseInt(w)
+        w = w-1;
+        console.log(w)
+        if (w>4759){
+        window.location.href = `http://localhost:8000/word/${w}/`;
+        }
+    }
+</script>
+
+<div class="container">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ wrd_dtl.word}}</h5>
+          <p class="card-text">{{wrd_dtl.meaning}}</p>
+          <br/>
+    <button class = "btn btn-primary" onclick="prev()">prev</button>
+    <button class = "btn btn-primary" onclick="next()">next</button>
+        </div>
+      </div>
+</div>
+{% endblock %}
