@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
+
 {% block content %}
 
 <div>
-    Word
+    <script>
+        function continu(){
+            var w = "{{wrd.id}}";
+            w = parseInt(w)
+            console.log(w)
+            
+            window.location.href = `http://localhost:8000/word/${w}/`;
+        }
+    </script>
+    {% if user.is_authenticated %}
+            <h3> Hello {{ user.username }} </h3>
+            <button class="btn btn-primary" onclick="continu()">Continue</button> 
+            {% endif %}
+
+    <h1> Login to continue </h1>
     
 </div>
 {% endblock %}

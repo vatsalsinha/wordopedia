@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
+
 {% block content %}
+{% if user.is_authenticated %}
+            <h3>  {{ user.username }} </h3>
+            {% endif %}
 <script>
     function next(){
         var w = "{{wrd_dtl.id}}";
