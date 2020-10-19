@@ -24,4 +24,5 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('api/words/', views.words_list_view),
     path('api/words/<int:word_id>', views.words_detail_view),
+    
 ]

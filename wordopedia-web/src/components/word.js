@@ -17,6 +17,7 @@ function Word(){
         }).then(resp => {
             r = resp.data;
             setWrd(r)
+            console.log(wrd)
         })
     }
     function next(){
