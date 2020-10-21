@@ -15,9 +15,11 @@
     {% if user.is_authenticated %}
             <h3> Hello {{ user.username }} </h3>
             <div id="root"></div>
+            {% else %}
+            <h1> Login to continue </h1>
             {% endif %}
 
-    <h1> Login to continue </h1>
+   
     
 </div>
 {% endblock %}

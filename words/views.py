@@ -32,7 +32,6 @@ def words_detail_view(request, word_id, *args, **kwargs):
     if not qs.exists():
         return Response({})
     obj = qs.first()
-    print(request.user)
     serializer = WordSerializer(obj)
     return Response(serializer.data)
 
